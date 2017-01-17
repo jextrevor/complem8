@@ -7,8 +7,10 @@
   }
 </style>
 <script>
+  degrees = 0;
   function spin(){
-    document.getElementsByTagName("img")[0].style.transform = "rotate(3600deg)";
+    degrees+= 3600;
+    document.getElementsByTagName("img")[0].style.transform = "rotate("+degrees+"deg)";
   }
 </script>
 </head>
