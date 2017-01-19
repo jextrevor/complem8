@@ -18,8 +18,9 @@
   }
 </style> 
 <script>
-  colors = ["#FF0000","#FF8000","#FFFF00","#80FF00","#00FF00","#00FF80","#00FFFF","#0080FF","#0000FF","#8000FF","#FF00FF","#FF0080"];
-  textcolors = ["#00FFFF","#0080FF","#0000FF","#8000FF","#FF00FF","#FF0080","#FF0000","#FF8000","#FFFF00","#80FF00","#00FF00","#00FF80"];
+  //colors = ["#FF0000","#FF8000","#FFFF00","#80FF00","#00FF00","#00FF80","#00FFFF","#0080FF","#0000FF","#8000FF","#FF00FF","#FF0080"];
+  colors = ["#FF0000","#00FF80","#FF00FF","#80FF00","#0000FF","#FF8000","#00FFFF","#FF0080","#00FF00","#8000FF","#FFFF00","#0080FF"];
+  textcolors = ["#00FFFF","#FF0080","#00FF00","#8000FF","#FFFF00","#0080FF","#FF0000","#00FF80","#FF00FF","#80FF00","#0000FF","#FF8000"];
   array = ["error"];
   var xhrRequest = function (url, type, callback) {
   var xhr = new XMLHttpRequest();
@@ -49,7 +50,7 @@
     document.body.style.color = textcolors[position];
     degrees+= 1800;
     document.getElementsByTagName("img")[0].style.transform = "rotate("+degrees+"deg)";
-    var rand = array[Math.floor(Math.random() * array.length)];
+    rand = array[Math.floor(Math.random() * array.length)];
     displayText(rand);
   }
 </script>
