@@ -7,13 +7,15 @@
     transition:transform 5s ease-out;
   }
   body {
-    background:#ED3A3A;
-    color:#FFFA5C;
+    background:#FF0000;
+    color:#00FFFF;
     font-family:sans-serif;
-    transition: background 5s ease-in-out;
+    transition: background 5s ease-in-out, color 5s ease-in-out;
   }
 </style> 
 <script>
+  colors = ["#FF0000","#FF8000","#FFFF00","#80FF00","#00FF00","#00FF80","#00FFFF","#0080FF","#0000FF","#8000FF","#FF00FF","#FF0080"];
+  textcolors = ["#00FFFF","#0080FF","#0000FF","#8000FF","#FF00FF","#FF0080","#FF0000","#FF8000","#FFFF00","#80FF00","#00FF00","#00FF80"];
   array = ["error"];
   var xhrRequest = function (url, type, callback) {
   var xhr = new XMLHttpRequest();
@@ -29,12 +31,18 @@
     document.getElementById("hi").innerHTML = string;
   }
   degrees = 0;
+  position = 0;
   function getRandomColor () {
   var hex = Math.floor(Math.random() * 0xFFFFFF);
   return "#" + ("000000" + hex.toString(16)).substr(-6);
   }
   function spin(){
-    document.body.style.background = getRandomColor();
+    position++;
+    if(position >= colors.length){
+      position = 0;
+    }
+    document.body.style.background = colors[position];
+    document.body.style.color = textcolors[position];
     degrees+= 1800;
     document.getElementsByTagName("img")[0].style.transform = "rotate("+degrees+"deg)";
     var rand = array[Math.floor(Math.random() * array.length)];
