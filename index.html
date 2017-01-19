@@ -51,7 +51,7 @@
     degrees+= 1800;
     document.getElementsByTagName("img")[0].style.transform = "rotate("+degrees+"deg)";
     rand = array[Math.floor(Math.random() * array.length)];
-    displayText(rand);
+    setTimeout(function(){displayText(rand);}, 5000);
   }
 </script>
 </head>
