@@ -23,7 +23,7 @@ img{
     margin-top:10%;
   }
   img {
-    transition:transform 5s ease-out, -webkit-transition 5s ease-out;
+    transition:transform 5s ease-out, -webkit-transform 5s ease-out;
     -webkit-transition:-webkit-transform 5s ease-out, transform 5s ease-out;
   }
   body {
@@ -82,6 +82,7 @@ img{
     document.body.style.color = textcolors[position];
     degrees+= 7200;
     document.getElementsByTagName("img")[1].style.transform = "rotate("+degrees+"deg)";
+    document.getElementsByTagName("img")[1].style['-webkit-transform'] = "rotate("+degrees+"deg)";
     rand = array[Math.floor(Math.random() * array.length)];
     setTimeout(function(){displayText(rand);}, 5000);
   }
