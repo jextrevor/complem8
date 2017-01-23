@@ -23,7 +23,8 @@ img{
     margin-top:10%;
   }
   img {
-    transition:transform 5s ease-out;
+    transition:transform 5s ease-out, -webkit-transition 5s ease-out;
+    -webkit-transition:-webkit-transform 5s ease-out, transform 5s ease-out;
   }
   body {
     background:#FF0000;
@@ -54,6 +55,17 @@ img{
   xhrRequest("complements.txt","GET",null);
   function displayText(string){
     document.getElementById("hi").innerHTML = string;
+  }
+  function motionEvent(event){
+    var x = event.acceleration.x;
+    var y = event.acceleration.y;
+    var z = event.acceleration.z;
+    if(x*x+y*y+z*z > 10*10){
+      spin();
+    }
+  }
+  if (window.DeviceMotionEvent) {
+  window.addEventListener('devicemotion', motionEvent, false);
   }
   degrees = 0;
   position = 0;
