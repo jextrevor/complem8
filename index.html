@@ -68,7 +68,7 @@ img{
     var x = event.acceleration.x;
     var y = event.acceleration.y;
     var z = event.acceleration.z;
-    if(x*x+y*y+z*z > 100*100 && !spinning){
+    if(x*x+y*y+z*z > 50*50 && !spinning){
       spin();
     }
   }
@@ -97,6 +97,8 @@ img{
     setTimeout(function(){displayText(rand);spinning = false;}, 5000);
   }
 </script>
+<meta name="apple-mobile-web-app-title" content="Complem8">
+<meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 <body>
 <div style="position:absolute;top:10px;left:10px;right:10px;width:auto;z-index:5;">
