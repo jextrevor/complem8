@@ -68,7 +68,7 @@ img{
     var x = event.acceleration.x;
     var y = event.acceleration.y;
     var z = event.acceleration.z;
-    if(x*x+y*y+z*z > 10*10){
+    if(x*x+y*y+z*z > 100*100 && !spinning){
       spin();
     }
   }
@@ -77,11 +77,13 @@ img{
   }
   degrees = 0;
   position = 0;
+  spinning = false;
   function getRandomColor () {
   var hex = Math.floor(Math.random() * 0xFFFFFF);
   return "#" + ("000000" + hex.toString(16)).substr(-6);
   }
   function spin(){
+    spinning = true;
     position++;
     if(position >= colors.length){
       position = 0;
@@ -92,7 +94,7 @@ img{
     document.getElementsByTagName("img")[1].style.transform = "rotate("+degrees+"deg)";
     document.getElementsByTagName("img")[1].style['-webkit-transform'] = "rotate("+degrees+"deg)";
     rand = array[Math.floor(Math.random() * array.length)];
-    setTimeout(function(){displayText(rand);}, 5000);
+    setTimeout(function(){displayText(rand);spinning = false;}, 5000);
   }
 </script>
 </head>
