@@ -83,6 +83,7 @@ img{
   return "#" + ("000000" + hex.toString(16)).substr(-6);
   }
   function spin(){
+    if(!spinning){
     spinning = true;
     position++;
     if(position >= colors.length){
@@ -95,6 +96,7 @@ img{
     document.getElementsByTagName("img")[1].style['-webkit-transform'] = "rotate("+degrees+"deg)";
     rand = array[Math.floor(Math.random() * array.length)];
     setTimeout(function(){displayText(rand);spinning = false;}, 5000);
+    }
   }
 </script>
 </head>
