@@ -173,7 +173,7 @@ if(!isset($_SESSION['hasVisited'])){
   fclose($f); 
 }
 
-echo "You are visitor number $counterVal to this site";
+echo "You are visitor number $counterVal to this site";?>
 </div>
 </body>
 </html>
