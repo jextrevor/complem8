@@ -17,7 +17,7 @@ fclose($f);
 // Has visitor been counted in this session?
 // If not, increase counter value by one
 if(!isset($_SESSION['hasVisited'])){
-  echo "hi";
+  //echo "hi";
   $_SESSION['hasVisited']="yes";
   $counterVal++;
   $counterVal = (string) $counterVal;
@@ -25,7 +25,7 @@ if(!isset($_SESSION['hasVisited'])){
   fwrite($f, $counterVal);
   fclose($f); 
 }
-echo $_SESSION['hasVisited'];
+//echo $_SESSION['hasVisited'];
 ?>
 
 <html>
