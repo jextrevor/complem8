@@ -23,6 +23,7 @@ if(!isset($_SESSION['hasVisited'])){
   fwrite($f, $counterVal);
   fclose($f); 
 }
+echo $_SESSION['hasVisited'];
 ?>
 
 <html>
