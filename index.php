@@ -11,7 +11,7 @@ if (!file_exists($counter_name)) {
 
 // Read the current value of our counter file
 $f = fopen($counter_name,"r");
-$counterVal = fread($f, filesize($counter_name));
+$counterVal = intval(fread($f, filesize($counter_name)));
 fclose($f);
 
 // Has visitor been counted in this session?
@@ -20,6 +20,7 @@ if(!isset($_SESSION['hasVisited'])){
   echo "hi";
   $_SESSION['hasVisited']="yes";
   $counterVal++;
+  $counterVal = (string) $counterVal;
   $f = fopen($counter_name, "w");
   fwrite($f, $counterVal);
   fclose($f); 
