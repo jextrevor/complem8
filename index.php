@@ -65,6 +65,13 @@ img{
     font-family:abc;
     transition: background 5s ease-in-out, color 5s ease-in-out;
   }
+  html *{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+  }
   @font-face {
     font-family: abc;
     src: url(BLKCHCRY.TTF);
